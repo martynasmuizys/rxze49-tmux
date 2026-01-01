@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Rxse49 - tmux theme
+# Rxze49 - tmux theme
 #
 # Inspired by rose-pine/tmux
 #
 #
-export TMUX_RXSE49_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
+export TMUX_RXZE49_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 get_tmux_option() {
     local option value default
