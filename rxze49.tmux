@@ -49,7 +49,7 @@ main() {
     red="#fc5f72";
     yellow="#ffb703";
     magenta="#ff80ab";
-    green="#00606d";
+    green="#00c9ad";
     blue="#00a7a3";
     bright_blue="#01c4bb";
     hl_low="#242428";
