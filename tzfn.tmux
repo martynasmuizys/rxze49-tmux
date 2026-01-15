@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Rxze49 - tmux theme
+# Tzfn - tmux theme
 #
 # Inspired by rose-pine/tmux
 #
 #
-export TMUX_RXZE49_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
+export TMUX_TZFN_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 get_tmux_option() {
     local option value default
@@ -40,18 +40,18 @@ unset_option() {
 
 
 main() {
-    black="#181818";
-    bright_black="#222222";
-    gray="#2a2a2a";
-    cyan="#5f6377";
-    bright_cyan="#767a90";
-    text="#f8eaea";
+    black="#201822";
+    bright_black="#6c5172";
+    gray="#362839";
+    cyan="#767a90";
+    bright_cyan="#9aa0b8";
+    text="#d6d9e0";
     red="#fc5f72";
     yellow="#ffb703";
     magenta="#ff80ab";
     green="#00c9ad";
-    blue="#00a7a3";
-    bright_blue="#01c4bb";
+    blue="#017d83";
+    bright_blue="#00a7a3";
     hl_low="#242428";
     hl_mid="#34363d";
     hl_high="#5e5a7a";
@@ -89,138 +89,138 @@ main() {
 
     # Shows username of the user the tmux session is run by
     local user
-    user="$(get_tmux_option "@rxze49_user" "")"
+    user="$(get_tmux_option "@tzfn_user" "")"
     readonly user
 
     # Shows hostname of the computer the tmux session is run on
     local host
-    host="$(get_tmux_option "@rxze49_host" "")"
+    host="$(get_tmux_option "@tzfn_host" "")"
     readonly host
 
     # Date and time command: follows the date UNIX command structure
     local date_time
-    date_time="$(get_tmux_option "@rxze49_date_time" "")"
+    date_time="$(get_tmux_option "@tzfn_date_time" "")"
     readonly date_time
 
     # Shows truncated current working directory
     local directory
-    directory="$(get_tmux_option "@rxze49_directory" "")"
+    directory="$(get_tmux_option "@tzfn_directory" "")"
 
     local disable_active_window_menu
-    disable_active_window_menu="$(get_tmux_option "@rxze49_disable_active_window_menu" "")"
+    disable_active_window_menu="$(get_tmux_option "@tzfn_disable_active_window_menu" "")"
 
     local show_current_program
-    show_current_program="$(get_tmux_option "@rxze49_show_current_program" "")"
+    show_current_program="$(get_tmux_option "@tzfn_show_current_program" "")"
     readonly show_current_program
 
     local window_directory
-    window_directory="$(get_tmux_option "@rxze49_show_pane_directory" "")"
+    window_directory="$(get_tmux_option "@tzfn_show_pane_directory" "")"
     readonly window_directory
 
     local window_separator
-    window_separator="$(get_tmux_option "@rxze49_window_separator" "")"
+    window_separator="$(get_tmux_option "@tzfn_window_separator" "")"
     readonly window_separator
 
     local default_window_behavior
-    default_window_behavior="$(get_tmux_option "@rxze49_default_window_behavior" "")"
+    default_window_behavior="$(get_tmux_option "@tzfn_default_window_behavior" "")"
     readonly default_window_behavior
 
     # Changes the background color for the current active window
     # TODO: Together with line 251-269, end development for this feature
     # local active_window_color
-    # active_window_color="$(get_tmux_option "@rxze49_active_window_color" "")"
+    # active_window_color="$(get_tmux_option "@tzfn_active_window_color" "")"
     # readonly active_window_color
 
     # Transparency enabling for status bar
     local bar_bg_disable
-    bar_bg_disable="$(get_tmux_option "@rxze49_bar_bg_disable" "")"
+    bar_bg_disable="$(get_tmux_option "@tzfn_bar_bg_disable" "")"
     readonly bar_bg_disable
 
     # Transparent option for status bar
     local bar_bg_disabled_color_option
-    bar_bg_disabled_color_option="$(get_tmux_option "@rxze49_bar_bg_disabled_color_option" "0")"
+    bar_bg_disabled_color_option="$(get_tmux_option "@tzfn_bar_bg_disabled_color_option" "0")"
     readonly bar_bg_disabled_color_option
 
     # Shows hostname of the computer the tmux session is run on
     local only_windows
-    only_windows="$(get_tmux_option "@rxze49_only_windows" "")"
+    only_windows="$(get_tmux_option "@tzfn_only_windows" "")"
     readonly only_windows
 
     # Allows user to set a few custom sections (for integration with other plugins)
     # Before the plugin's left section
     local status_left_prepend_section
-    status_left_prepend_section="$(get_tmux_option "@rxze49_status_left_prepend_section" "")"
+    status_left_prepend_section="$(get_tmux_option "@tzfn_status_left_prepend_section" "")"
     readonly status_left_prepend_section
     #
     # after the plugin's left section
     local status_left_append_section
-    status_left_append_section="$(get_tmux_option "@rxze49_status_left_append_section" "")"
+    status_left_append_section="$(get_tmux_option "@tzfn_status_left_append_section" "")"
     readonly status_left_append_section
     # Before the plugin's right section
     local status_right_prepend_section
-    status_right_prepend_section="$(get_tmux_option "@rxze49_status_right_prepend_section" "")"
+    status_right_prepend_section="$(get_tmux_option "@tzfn_status_right_prepend_section" "")"
     readonly status_right_prepend_section
     #
     # after the plugin's right section
     local status_right_append_section
-    status_right_append_section="$(get_tmux_option "@rxze49_status_right_append_section" "")"
+    status_right_append_section="$(get_tmux_option "@tzfn_status_right_append_section" "")"
     readonly status_right_append_section
 
     # Settings that allow user to choose their own icons and status bar behaviour
     # START
     local current_window_icon
-    current_window_icon="$(get_tmux_option "@rxze49_current_window_icon" "")"
+    current_window_icon="$(get_tmux_option "@tzfn_current_window_icon" "")"
     readonly current_window_icon
 
     local current_session_icon
-    current_session_icon="$(get_tmux_option "@rxze49_session_icon" "")"
+    current_session_icon="$(get_tmux_option "@tzfn_session_icon" "")"
     readonly current_session_icon
 
     local username_icon
-    username_icon="$(get_tmux_option "@rxze49_username_icon" "")"
+    username_icon="$(get_tmux_option "@tzfn_username_icon" "")"
     readonly username_icon
 
     local hostname_icon
-    hostname_icon="$(get_tmux_option "@rxze49_hostname_icon" "󰒋")"
+    hostname_icon="$(get_tmux_option "@tzfn_hostname_icon" "󰒋")"
     readonly hostname_icon
 
     local date_time_icon
-    date_time_icon="$(get_tmux_option "@rxze49_date_time_icon" "󰃰")"
+    date_time_icon="$(get_tmux_option "@tzfn_date_time_icon" "󰃰")"
     readonly date_time_icon
 
     local current_folder_icon
-    current_folder_icon="$(get_tmux_option "@rxze49_folder_icon" "")"
+    current_folder_icon="$(get_tmux_option "@tzfn_folder_icon" "")"
     readonly current_folder_icon
 
     # Changes the icon / character that goes between each window's name in the bar
     local window_status_separator
-    window_status_separator="$(get_tmux_option "@rxze49_window_status_separator" "  ")"
+    window_status_separator="$(get_tmux_option "@tzfn_window_status_separator" "  ")"
 
     # This setting does nothing by itself, it enables the 2 below it to toggle the simplified bar
     local prioritize_windows
-    prioritize_windows="$(get_tmux_option "@rxze49_prioritize_windows" "")"
+    prioritize_windows="$(get_tmux_option "@tzfn_prioritize_windows" "")"
 
     # Allows the user to set a min width at which most of the bar elements hide, or
     local user_window_width
-    user_window_width="$(get_tmux_option "@rxze49_width_to_hide" "")"
+    user_window_width="$(get_tmux_option "@tzfn_width_to_hide" "")"
 
     # A number of windows, when over it, the bar gets simplified
     local user_window_count
-    user_window_count="$(get_tmux_option "@rxze49_window_count" "")"
+    user_window_count="$(get_tmux_option "@tzfn_window_count" "")"
 
     # Custom window status that goes between the number and the window name
     local custom_window_sep="#[fg=$bright_blue]#I#[fg=$bright_blue,]$window_separator#[fg=$bright_blue]#W"
     local custom_window_sep_current="#I#[fg=$yellow,bg=""]$window_separator#[fg=$yellow,bg=""]#W"
 
     local right_separator
-    right_separator="$(get_tmux_option "@rxze49_right_separator" "  ")"
+    right_separator="$(get_tmux_option "@tzfn_right_separator" "  ")"
 
     local left_separator
-    left_separator="$(get_tmux_option "@rxze49_left_separator" "  ")"
+    left_separator="$(get_tmux_option "@tzfn_left_separator" "  ")"
 
     local field_separator
     # NOTE: Don't remove
-    field_separator="$(get_tmux_option "@rxze49_field_separator" " | " )"
+    field_separator="$(get_tmux_option "@tzfn_field_separator" " | " )"
 
     # END
 
